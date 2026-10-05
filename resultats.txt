@@ -1,0 +1,11 @@
+Somme: 5
+Différence: -1
+Produit: 6
+Rapport: 0.666667
+x = 0.33333334326744079590
+y = 0.33333333333333331483
+i réel: 0.333333
+i entier: 1
+x réel: 0.333333
+x entier: 1734869159
+Variable définie: 1734869210
