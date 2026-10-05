@@ -13,11 +13,11 @@ int main(){
 	y[1] = 0.0; // y'(0)
 	double h = 0.001;
 	double x0 = 0.0;
-	double x;
+	double x = x0;
 	FILE *fich;
 	fich = fopen("osc.txt","w");
 	do{
-		fprintf(fich,"%lf %lf %lf\n", x, y[0],h);
+		fprintf(fich,"%lf %lf %lf %lf\n", x, y[0],h,y[1]);
 		y = euler_vectorise(x, y, h);
 		x=x+h;
 	}while(x<50.0);
@@ -27,9 +27,10 @@ int main(){
 
 dvector f(double x, dvector y){
     double Wo = 2.0;
+    double e = 0.06; //Facteur d'amortissement
     dvector F(2);
     F[0] = y[1];
-    F[1] = -(Wo*Wo)*y[0];
+    F[1] = -2.0*e*Wo*y[1]-(Wo*Wo)*y[0];
     return F;
 }
 
